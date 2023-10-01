@@ -3,11 +3,11 @@ import { GameState } from '@/types/GameState';
 import { createContext, useReducer } from 'react';
 
 export const GameStateContext = createContext<{
-	state?: GameState;
-	dispatch?: Function;
+	state: GameState;
+	dispatch: Function;
 }>({
-	state: undefined,
-	dispatch: undefined,
+	state: InitGameState,
+	dispatch: (action: any) => {},
 });
 
 export const GameStateProvider = ({ children }: any) => {

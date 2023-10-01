@@ -1,3 +1,9 @@
 export interface GameState {
-	view: 'start' | 'help' | 'game' | 'score';
+	difficulty: 'easy' | 'medium' | 'hard';
+	timePerRound: number;
+	round: number;
+	score: number;
+	playerName: string;
+	paused: boolean;
+	gameOver: boolean;
 }
