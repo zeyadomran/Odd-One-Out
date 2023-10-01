@@ -11,7 +11,7 @@ This challenge not only keeps kids entertained but enhances object recognition a
 
 
 ### To Run
-- Install [node.js](https://nodejs.org/en/download/current).
+- Install [node.js](https://nodejs.org/en/download/current)
 - Install [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 - Clone the repo
 - `yarn install`
