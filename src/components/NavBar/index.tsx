@@ -1,24 +1,63 @@
-import { FC } from 'react';
+'use client';
+
+import Link from 'next/link';
+import { FC, useEffect, useState } from 'react';
+import {
+	TbArrowBigLeftFilled,
+	TbPlayerPauseFilled,
+	TbPlayerPlayFilled,
+} from 'react-icons/tb';
 
 interface Props {
 	inGameLayout?: boolean;
+	paused?: boolean;
+	togglePause?: () => void;
 }
-const NavBar: FC<Props> = ({ inGameLayout }) => {
+const NavBar: FC<Props> = ({ inGameLayout, paused, togglePause }) => {
+	const [showRules, setShowRules] = useState(false);
+
 	return (
-		<nav className="flex justify-between items-center p-8">
-			<div>
-				<h1 className="font-bold text-white text-4xl">Odd One Out</h1>
+		<nav className="relative flex justify-between gap-4 items-center p-8">
+			<div className="flex items-center gap-4">
+				{inGameLayout && (
+					<Link href="/">
+						<TbArrowBigLeftFilled className="h-12 w-10 text-purple-900 hover:text-purple-400 cursor-pointer transition-all duration-300 ease-in-out" />
+					</Link>
+				)}
+				<div className="">
+					<h1 className="font-bold text-white text-4xl">Odd One Out</h1>
+				</div>
 			</div>
 			<div className="flex justify-between items-center gap-4">
-				<button className="py-3 px-6 text-black bg-white rounded-sm text-xl font-bold cursor-pointer hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out">
-					Rules
-				</button>
 				{inGameLayout && (
-					<button className="py-3 px-6 text-black bg-white rounded-sm text-xl font-bold cursor-pointer hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out">
-						Pause
+					<button onClick={() => togglePause?.()}>
+						{paused ? (
+							<TbPlayerPlayFilled className="h-12 w-10 text-purple-900 hover:text-purple-400 cursor-pointer transition-all duration-300 ease-in-out" />
+						) : (
+							<TbPlayerPauseFilled className="h-12 w-10 text-purple-900 hover:text-purple-400 cursor-pointer transition-all duration-300 ease-in-out" />
+						)}
 					</button>
 				)}
+				<button
+					className="py-3 px-6 text-white bg-purple-900 rounded-sm text-xl font-bold cursor-pointer hover:bg-purple-400 transition-all duration-300 ease-in-out"
+					onClick={() => {
+						setShowRules(!showRules);
+						if ((!paused && !showRules) || (paused && showRules)) {
+							togglePause?.();
+						}
+					}}
+				>
+					{!showRules ? 'Rules' : 'Close'}
+				</button>
 			</div>
+			{showRules && (
+				<div className="absolute top-full right-8 bg-purple-900 w-96 p-8 text-white font-light">
+					<p>
+						Just pick the odd picture out before the time runs out. If you get 1
+						wrong, you lose. Get all 10 correct to win the game!
+					</p>
+				</div>
+			)}
 		</nav>
 	);
 };

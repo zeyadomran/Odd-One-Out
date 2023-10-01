@@ -1,9 +1,10 @@
 export interface GameState {
-	difficulty: 'easy' | 'medium' | 'hard';
+	difficulty: 1 | 2 | 3;
 	timePerRound: number;
+	numberOfRounds: number;
 	round: number;
-	score: number;
-	playerName: string;
+	score: 0;
+	gameWin: boolean;
 	paused: boolean;
 	gameOver: boolean;
 }
