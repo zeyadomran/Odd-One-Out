@@ -6,7 +6,6 @@ This challenge not only keeps kids entertained but enhances object recognition a
 
 # Links
 - [Try it out!](odd-one-out.vercel.com) 
-<br/>
 - [Portfolio](odd-one-out-cpsc581.carrd.co)
 - [Video demo](https://youtu.be/k8iT3vTZGII)
 
