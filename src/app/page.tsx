@@ -28,19 +28,21 @@ export default function Home() {
 				/>
 				<Link
 					href={'/game?difficulty=' + difficulty}
-					className="py-3 px-6 text-white bg-purple-900 rounded-sm text-lg font-bold cursor-pointer hover:bg-purple-400 transition-all duration-300 ease-in-out"
+					className="py-3 px-6 text-white bg-purple-900 rounded-sm text-lg font-bold cursor-pointer hover:bg-purple-400 transition-all duration-300 ease-in-out select-none"
 				>
 					Start Challenge
 				</Link>
 				<div className="p-8 h-full w-96 bg-purple-900 flex flex-col gap-4 items-start justify-start">
-					<p className="text-white flex-bold text-2xl">Scoreboard</p>
-					<div className="flex flex-col gap-2 w-full max-h-96 overflow-y-scroll">
+					<p className="text-white flex-bold text-2xl select-none">
+						Scoreboard
+					</p>
+					<div className="flex flex-col gap-2 w-full max-h-64 overflow-y-scroll">
 						{scores
 							.sort((a: any, b: any) => b.score - a.score)
 							.map((score: any, index) => (
 								<div
 									key={index}
-									className="flex p-2 px-4 gap-2 justify-between items-center text-white w-full border-2 border-purple-700 rounded sm "
+									className="flex p-2 px-4 gap-2 justify-between items-center text-white w-full border-2 border-purple-700 rounded sm select-none"
 								>
 									<div>
 										{score.difficulty === 3

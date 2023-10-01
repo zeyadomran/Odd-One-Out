@@ -14,7 +14,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			<Head>
 				<title>Odd One Out</title>
 			</Head>
-			<body className={bioRhyme.className + ' overflow-hidden'}>
+			<body
+				className={
+					bioRhyme.className +
+					' xl:overflow-hidden sm:overflow-auto md:overflow-auto lg:overflow-auto'
+				}
+			>
 				{children}
 			</body>
 		</html>

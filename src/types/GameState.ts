@@ -3,7 +3,7 @@ export interface GameState {
 	timePerRound: number;
 	numberOfRounds: number;
 	round: number;
-	score: 0;
+	score: number;
 	gameWin: boolean;
 	paused: boolean;
 	gameOver: boolean;
