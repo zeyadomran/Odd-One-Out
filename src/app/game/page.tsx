@@ -40,7 +40,7 @@ export default function Game() {
 						...(scores ?? []),
 						{
 							score: state.score,
-							diffculty: state.difficulty,
+							difficulty: state.difficulty,
 							date: Date.now(),
 						},
 					],
