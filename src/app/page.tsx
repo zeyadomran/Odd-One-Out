@@ -48,9 +48,9 @@ export default function Home() {
 									className="flex p-2 px-4 gap-2 justify-between items-center text-white w-full border-2 border-purple-700 rounded sm select-none"
 								>
 									<div>
-										{score.difficulty === 3
+										{+score.difficulty === 3
 											? '⭐⭐⭐'
-											: score.diffculty === 2
+											: +score.diffculty === 2
 											? '⭐⭐'
 											: '⭐'}
 									</div>
