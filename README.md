@@ -5,7 +5,7 @@ In this interactive game, young players are presented with a series of pictures 
 This challenge not only keeps kids entertained but enhances object recognition abilities and encourages attention to detail, and problem-solving.
 
 ### Links
-- [Try it out](https://odd-one-out.vercel.com) 
+- [Try it out](https://odd-one-out.vercel.app) 
 - [Portfolio](https://odd-one-out-cpsc581.carrd.co)
 - [Video demo](https://youtu.be/k8iT3vTZGII)
 
