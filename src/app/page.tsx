@@ -37,6 +37,9 @@ export default function Home() {
 						Scoreboard
 					</p>
 					<div className="flex flex-col gap-2 w-full max-h-64 overflow-y-scroll">
+						{(!scores || scores.length === 0) && (
+							<p className="text-white">No games played.</p>
+						)}
 						{scores
 							.sort((a: any, b: any) => b.score - a.score)
 							.map((score: any, index) => (
