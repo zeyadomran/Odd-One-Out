@@ -13,7 +13,7 @@ export const InitGameState: GameState = {
 	difficulty: 1,
 	timePerRound: 60,
 	numberOfRounds: 10,
-	round: 1,
+	round: 0,
 	score: 0,
 	gameWin: false,
 	paused: false,
@@ -52,7 +52,7 @@ export const GameStateReducer = (state: any, action: any): GameState => {
 						100 *
 						state.difficulty
 			);
-			if (state.round === state.numberOfRounds) {
+			if (state.round === state.numberOfRounds - 1) {
 				return {
 					...state,
 					gameWin: true,

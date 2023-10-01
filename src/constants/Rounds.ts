@@ -49,8 +49,8 @@ export const Rounds = [
 	],
 	[
 		{ imageSrc: '/fball.webp', isCorrect: false },
-		{ imageSrc: '/nfl.avif', isCorrect: true },
-		{ imageSrc: '/bball.avif', isCorrect: false },
+		{ imageSrc: '/nfl.jpg', isCorrect: true },
+		{ imageSrc: '/bball.webp', isCorrect: false },
 		{ imageSrc: '/hball.jpg', isCorrect: false },
 	],
 	[

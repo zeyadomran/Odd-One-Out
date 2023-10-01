@@ -66,7 +66,7 @@ export default function Game() {
 				<div className="flex justify-between items-start w-full">
 					<div className="flex flex-col items-start juestify-start gap-4">
 						<div className="text-white font-bold text-2xl">
-							Round: {state.round}/{state.numberOfRounds}
+							Round: {state.round + 1}/{state.numberOfRounds}
 						</div>
 						<div className="text-white font-bold text-2xl">
 							Score: {state.score}
@@ -87,22 +87,25 @@ export default function Game() {
 					</div>
 				</div>
 				<div className="grid grid-cols-2 gap-4 pt-8">
-					{rounds[state.round - 1]?.map((round, index) => (
-						<AnswerCard
-							src={round.imageSrc}
-							key={state.round + '' + index}
-							onClick={() => {
-								if (round.isCorrect) {
-									dispatch({
-										type: GameStateActions.NEXT_ROUND,
-										payload: { time: roundTime },
-									});
-								} else {
-									dispatch({ type: GameStateActions.GAME_OVER });
-								}
-							}}
-						/>
-					))}
+					{!state.paused &&
+						!state.gameWin &&
+						!state.gameOver &&
+						rounds[state.round]?.map((round, index) => (
+							<AnswerCard
+								src={round.imageSrc}
+								key={state.round + 1 + '' + index}
+								onClick={() => {
+									if (round.isCorrect) {
+										dispatch({
+											type: GameStateActions.NEXT_ROUND,
+											payload: { time: roundTime },
+										});
+									} else {
+										dispatch({ type: GameStateActions.GAME_OVER });
+									}
+								}}
+							/>
+						))}
 				</div>
 				{state.paused && (
 					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 bg-purple-900 flex flex-col justify-start items-center gap-2">
@@ -136,7 +139,7 @@ export default function Game() {
 						<h2 className="text-white font-bold text-3xl pb-4">Game Win</h2>
 						<p className="text-white text-lg">Score: {state.score}</p>
 						<p className="text-white text-lg pb-4">
-							Round: {state.round}/{state.numberOfRounds}
+							Round: {state.round + 1}/{state.numberOfRounds}
 						</p>
 						<Link
 							href="/"
